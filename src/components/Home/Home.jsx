@@ -1,7 +1,11 @@
 import React from 'react';
 import './Home.css';
+import { useLoaderData } from 'react-router-dom';
+import HomeCard from '../HomeCard/HomeCard';
 
 const Home = () => {
+    const chefrecipes = useLoaderData();
+    console.log(chefrecipes);
     return (
         <div className='my-10'>
             <div className='grid grid-cols-2 mx-20 items-center gap-5'>
@@ -13,6 +17,14 @@ const Home = () => {
                 <div>
                     <img className='rounded-xl' src="/images/img.jpg" alt="" />
                 </div>
+            </div>
+            <div  className='grid grid-cols-3 mx-20 gap-10'>
+                {
+                    chefrecipes&&chefrecipes?.map(chefrecipe => <HomeCard
+                    key={chefrecipe.id}
+                    chefrecipe={chefrecipe}
+                    ></HomeCard>)
+                }
             </div>
         </div>
     );
