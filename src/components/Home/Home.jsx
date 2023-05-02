@@ -18,7 +18,7 @@ const Home = () => {
                     <img className='rounded-xl' src="/images/img.jpg" alt="" />
                 </div>
             </div>
-            <div  className='grid grid-cols-3 mx-20 gap-10'>
+            <div  className='grid grid-cols-3 m-20 gap-10 '>
                 {
                     chefrecipes&&chefrecipes?.map(chefrecipe => <HomeCard
                     key={chefrecipe.id}
