@@ -3,12 +3,12 @@ import { FaRegThumbsUp } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const HomeCard = ({ chefrecipe }) => {
-    console.log(chefrecipe);
+    // console.log(chefrecipe);
     const { id, chefName, picture, numRecipes, yearsOfExperience, likes } = chefrecipe;
     return (
         <div>
             <div className=" bg-base-100 shadow-xl">
-                <figure><img src={picture} alt="chef image" /></figure>
+                <figure><img className='rounded-md' src={picture} alt="chef image" /></figure>
 
                 <div className="card-body">
                     <h2 className="card-title">{chefName}</h2>

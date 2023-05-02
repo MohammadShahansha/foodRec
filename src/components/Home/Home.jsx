@@ -5,7 +5,7 @@ import HomeCard from '../HomeCard/HomeCard';
 
 const Home = () => {
     const chefrecipes = useLoaderData();
-    console.log(chefrecipes);
+    // console.log(chefrecipes);
     return (
         <div className='my-10'>
             <div className='grid grid-cols-2 mx-20 items-center gap-5'>
