@@ -3,8 +3,8 @@ import './Home.css';
 
 const Home = () => {
     return (
-        <div className=''>
-            <div className='grid grid-cols-2 mx-20 items-center'>
+        <div className='my-10'>
+            <div className='grid grid-cols-2 mx-20 items-center gap-5'>
                 <div>
                     <h1 className='text-center text-6xl font-semibold'>Welcome to my</h1>
                     <h1 className='text-center text-6xl font-semibold text-sky-600'>TextofFood</h1>

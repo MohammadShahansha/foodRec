@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <div className=''>
-            <div className="flex justify-between bg-base-300 text-center">
-                <p className="ml-20 btn btn-ghost normal-case text-xl">TestofFood</p>
+        <div className='sticky top-0'>
+            <div className="flex justify-between bg-base-300 text-center py-2">
+                <p className="ml-20 btn btn-ghost normal-case text-4xl">TestofFood</p>
                 <div className='text-center'>
                     <Link className="btn btn-ghost normal-case text-xl" to='/'>Home</Link>
                     <Link className="btn btn-ghost normal-case text-xl" to='/blog'>Blog</Link>
