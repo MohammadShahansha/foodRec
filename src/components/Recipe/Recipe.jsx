@@ -1,8 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaRegStar, FaStar } from 'react-icons/fa';
 import Rating from 'react-rating';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Recipe = ({ recipe }) => {
+    // const notify = () => toast("Wow my Favorite recipe!");
+    const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+
+    const notify = () => {
+        toast("Wow my Favorite recipe!");
+
+        setIsButtonDisabled(true);
+    }
+
+
+
+
     console.log(recipe)
     const { recipeName, cookingMethod, ingredients, rating, } = recipe;
     return (
@@ -31,8 +45,9 @@ const Recipe = ({ recipe }) => {
                             />
                             <p>{rating}</p>
                         </div>
-                        
-                        <button className="btn btn-primary">Favorite</button>
+
+                        <button onClick={notify} disabled={isButtonDisabled} className="btn btn-primary">Favorite</button>
+                        <ToastContainer />
                     </div>
                 </div>
             </div>

@@ -3,7 +3,10 @@ import { useLoaderData } from 'react-router-dom';
 import { FaRegThumbsUp } from 'react-icons/fa';
 import Recipe from '../Recipe/Recipe';
 
+
+
 const ViewRecipe = () => {
+   
     const viewrecipe = useLoaderData();
     console.log(viewrecipe);
     const { id, chefName, picture, numRecipes, yearsOfExperience, likes, cookingMethod, description, ingredients,recipes,  rating, recipeName } = viewrecipe;

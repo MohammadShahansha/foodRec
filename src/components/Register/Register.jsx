@@ -1,9 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProviders';
 import { Link } from 'react-router-dom';
 
 const Register = () => {
-    const {createUser,userPhoto} = useContext(AuthContext);
+    const {createUser,updatedInfo} = useContext(AuthContext);
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('')
 
     const handleRegister = event => {
         event.preventDefault();
@@ -13,24 +15,22 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(name, photo, email, password);
+        setError('');
+        if(password.length<6){
+            setError('password must be 6 cherecter long');
+            return
+        }
         createUser(email, password)
         .then(result => {
             const createdUser = result.user;
             console.log(createdUser);
+            updatedInfo(name, photo);
+            setSuccess('Register Succesful!')
             form.reset();
         })
         .catch(error => {
             console.log(error);
         });
-
-        userPhoto(name, photo)
-        .then(result => {
-            const takePhoto = result.user;
-            console.log(takePhoto);
-        })
-        .catch(error => {
-            console.log(error)
-        })
 
     }
 
@@ -75,6 +75,8 @@ const Register = () => {
                                 <button className="btn btn-primary">Register</button>
                                 <p className='text-center'><small>Already have an Account?</small><Link to='/login' className='text-primary underline'>Login</Link></p>
                             </div>
+                            <p className='text-red-600'>{error}</p>
+                            <p className='text-green-600'>{success}</p>
                         </form>
                     </div>
                 </div>

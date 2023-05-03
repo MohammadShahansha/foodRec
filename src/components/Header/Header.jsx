@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Providers/AuthProviders';
 
 const Header = () => {
+    const {user, logOut} = useContext(AuthContext);
+    const handleLogOut = () =>{
+        logOut()
+        .then()
+        .catch(error => console.log(error));
+    }
     return (
         <div className='sticky top-0 z-10'>
             <div className="flex justify-between bg-base-300 text-center py-2">
@@ -11,8 +18,11 @@ const Header = () => {
                     <Link className="btn btn-ghost normal-case text-xl" to='/blog'>Blog</Link>
                 </div>
                <div className='mr-20'>
-               <Link className="btn btn-ghost normal-case text-xl" to='/login'>Login</Link>
-                <Link className="btn btn-ghost normal-case text-xl" to='/register'>Register</Link>
+                {
+                    user? <div className='flex'><img className='w-16 rounded' src={`${user.photoURL}`} alt="" />
+                    <Link onClick={handleLogOut} className="btn btn-ghost normal-case text-xl" to='/login'>Log Out</Link>
+                    </div>: <Link className="btn btn-ghost normal-case text-xl" to='/login'>Login</Link>
+                }
                </div>
             </div>
         </div>

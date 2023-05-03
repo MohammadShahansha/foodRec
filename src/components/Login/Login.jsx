@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 
 const Login = () => {
     const {login} = useContext(AuthContext)
+    // const [user, setUser] = useState(null)
     const auth = getAuth(app);
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
@@ -24,6 +25,8 @@ const Login = () => {
         .then(result => {
             const loggedUser = result.user;
             console.log(loggedUser);
+            // setUser(loggedUser)
+            form.reset();
         })
         .catch(error => {
             console.log(error)

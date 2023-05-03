@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Home.css';
 import { useLoaderData } from 'react-router-dom';
 import HomeCard from '../HomeCard/HomeCard';
+import SectionOne from '../SectionOne/SectionOne';
+import { AuthContext } from '../../Providers/AuthProviders';
 
 const Home = () => {
     const chefrecipes = useLoaderData();
     // console.log(chefrecipes);
+    const {loading} = useContext(AuthContext);
+    if(loading){
+        return <progress className="progress progress-primary w-56" value="40" max="100"></progress>
+    }
     return (
         <div className='my-10'>
             <div className='grid grid-cols-2 mx-20 items-center gap-5'>
@@ -25,6 +31,9 @@ const Home = () => {
                     chefrecipe={chefrecipe}
                     ></HomeCard>)
                 }
+            </div>
+            <div>
+                <SectionOne></SectionOne>
             </div>
         </div>
     );
