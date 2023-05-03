@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../../Providers/AuthProviders';
 
 const Register = () => {
-    const {createUser} = useContext(AuthContext);
+    const {createUser,userPhoto} = useContext(AuthContext);
 
     const handleRegister = event => {
         event.preventDefault();
@@ -20,7 +20,17 @@ const Register = () => {
         })
         .catch(error => {
             console.log(error);
+        });
+
+        userPhoto(name, photo)
+        .then(result => {
+            const takePhoto = result.user;
+            console.log(takePhoto);
         })
+        .catch(error => {
+            console.log(error)
+        })
+
     }
 
 
