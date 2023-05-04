@@ -29,7 +29,10 @@ const Recipe = ({ recipe }) => {
                     <div className='ms-16'>
 
                         {
-                            ingredients.map(ingredient => <p>
+                            ingredients.map((ingredient, index )=> <p
+                            key={index}
+                            >
+                                
                                 -{ingredient}
                             </p>)
                         }

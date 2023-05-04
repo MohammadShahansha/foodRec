@@ -3,16 +3,19 @@ import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from
 import { AuthContext } from '../../Providers/AuthProviders';
 import app from '../../firebase/firebase.config';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 
 
 const Login = () => {
     const {login} = useContext(AuthContext)
-    // const [user, setUser] = useState(null)
+    const [error, setError] = useState(false);
     const auth = getAuth(app);
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/'
 
     const handleLogin = event => {
         event.preventDefault();
@@ -26,10 +29,14 @@ const Login = () => {
             const loggedUser = result.user;
             console.log(loggedUser);
             // setUser(loggedUser)
+            navigate(from);
+            setError('');
             form.reset();
+            
         })
         .catch(error => {
             console.log(error)
+            setError('Email or Password do not match')
         })
     }
 
@@ -83,12 +90,13 @@ const Login = () => {
                                 <button className="btn btn-primary">Login</button>
                                 <p><small>Don't Have an Account?</small><Link to='/register'className='text-primary underline' >Register</Link></p>
                             </div>
+                            <h2 className='text-red-600' >{error}</h2>
                         </form>
                         <div className='text-center mb-3'>
-                            <button onClick={handleGoogleSignin} className="btn btn-outline btn-primary text-center"><FaGoogle className='text-black font-semibold text-2xl me-2'></FaGoogle> Signin with Google </button>
+                            <button onClick={handleGoogleSignin} className="btn btn-outline btn-primary text-center"><FaGoogle className='text-black font-semibold text-2xl me-2'></FaGoogle> Login with Google </button>
                         </div>
                         <div className='text-center mb-3'>
-                            <button onClick={handleGithubSignin} className="btn btn-outline btn-primary text-center"><FaGithub className='text-black font-semibold text-2xl me-2'></FaGithub> Signin with Github </button>
+                            <button onClick={handleGithubSignin} className="btn btn-outline btn-primary text-center"><FaGithub className='text-black font-semibold text-2xl me-2'></FaGithub> Login with Github </button>
                         </div>
                        
                     </div>

@@ -20,7 +20,7 @@ const SectionTwo = () => {
                         <img src="/images/rice.jpg" className="rounded-box" />
                     </div>
                     <div className="carousel-item image-size">
-                        <img src="/public/images/recipe.jpg" className="rounded-box" />
+                        <img src="/images/recipe.jpg" className="rounded-box" />
                     </div>
 
                 </div>

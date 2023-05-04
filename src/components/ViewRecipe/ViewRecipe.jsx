@@ -31,8 +31,8 @@ const ViewRecipe = () => {
 
             <div className=' flex gap-3 justify-center mb-20 rounded-md'>
                 {
-                    recipes.map(recipe => <Recipe
-                    key={recipe.id}
+                    recipes.map((recipe, index )=> <Recipe
+                    key={index}
                     recipe={recipe}
                     ></Recipe>)
                 }

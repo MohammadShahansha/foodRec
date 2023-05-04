@@ -8,7 +8,6 @@ import SectionTwo from '../SectionTwo/SectionTwo';
 
 const Home = () => {
     const chefrecipes = useLoaderData();
-    // console.log(chefrecipes);
     const {loading} = useContext(AuthContext);
     if(loading){
         return <progress className="progress progress-primary w-56" value="40" max="100"></progress>

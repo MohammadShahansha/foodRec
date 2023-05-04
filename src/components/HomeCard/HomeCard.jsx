@@ -3,7 +3,7 @@ import { FaRegThumbsUp } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const HomeCard = ({ chefrecipe }) => {
-    // console.log(chefrecipe);
+    
     const { id, chefName, picture, numRecipes, yearsOfExperience, likes } = chefrecipe;
     return (
         <div>
