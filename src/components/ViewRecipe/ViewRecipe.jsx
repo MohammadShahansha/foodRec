@@ -28,7 +28,7 @@ const ViewRecipe = () => {
                 </div>
 
             </div>
-
+            <h2 className='text-center text-5xl font-semibold mb-2'>Information of Each Recipe</h2>
             <div className=' flex gap-3 justify-center mb-20 rounded-md'>
                 {
                     recipes.map((recipe, index )=> <Recipe

@@ -5,7 +5,7 @@ const SectionTwo = () => {
     return (
         <div className='flex justify-center my-10 p-2'>
             <div>
-                <h2 className='text-4xl text-center font-semibold mb-2'>Some Popular Food</h2>
+                <h2 className='text-5xl text-center font-semibold mb-2'>Some Popular Food</h2>
                 <div className="carousel carousel-center max-w-md p-4 space-x-4 bg-neutral rounded-box">
                     <div className="carousel-item image-size">
                         <img src="/images/crispy.jpg" className="rounded-box w-52 h-80" />

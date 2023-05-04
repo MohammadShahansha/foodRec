@@ -24,7 +24,7 @@ const Home = () => {
                     <img className='rounded-xl' src="/images/img.jpg" alt="" />
                 </div>
             </div>
-            <h2 className='text-center text-4xl mt-10 mb-2 font-semibold'>Chef Information</h2> 
+            <h2 className='text-center text-5xl mt-10 mb-2 font-semibold'>Chef Information</h2> 
             <div  className='lg:grid grid-cols-3 lg:mx-20 mb-10 gap-10 h-full p-2'>
                 {
                     chefrecipes&&chefrecipes?.map(chefrecipe => <HomeCard
