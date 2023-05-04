@@ -12,8 +12,8 @@ const HomeCard = ({ chefrecipe }) => {
 
                 <div className="card-body">
                     <h2 className="card-title">{chefName}</h2>
-                    <p>{yearsOfExperience} years</p>
-                    <p>Recipes Number {numRecipes}</p>
+                    <p>{yearsOfExperience} Years Experience</p>
+                    <p>Recipes Number: {numRecipes}</p>
                     <div className=" flex items-center justify-between">
                         <div className='flex items-center gap-3'>
                             <p className='text-blue-500 text-3xl'> <FaRegThumbsUp></FaRegThumbsUp></p>

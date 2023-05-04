@@ -2,13 +2,13 @@ import React from 'react';
 
 const SectionOne = () => {
     return (
-        <div className='mx-20'>
+        <div className='lg:mx-20 p-2'>
             <h2 className='text-5xl text-center font-semibold mb-2'>Bibimbap</h2>
             <div>
-                <div className="grid grid-cols-2 items-center">
+                <div className="lg:grid grid-cols-2 items-center">
                     <figure><img className='rounded-md' src="/images/recipe.jpg" alt="Album" /></figure>
                     <div className="card-body">
-                        <h2 className="text-3xl">Bibimbap is a popular food for korian</h2>
+                        <h2 className="text-3xl">Bibimbap is a popular food for korean</h2>
                         <h2 className='text-2xl underline'>Ingredients:</h2>
                         <p>
                             1 cup of rice, cooked

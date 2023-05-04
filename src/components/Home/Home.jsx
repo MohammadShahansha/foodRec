@@ -4,6 +4,7 @@ import { useLoaderData } from 'react-router-dom';
 import HomeCard from '../HomeCard/HomeCard';
 import SectionOne from '../SectionOne/SectionOne';
 import { AuthContext } from '../../Providers/AuthProviders';
+import SectionTwo from '../SectionTwo/SectionTwo';
 
 const Home = () => {
     const chefrecipes = useLoaderData();
@@ -14,7 +15,7 @@ const Home = () => {
     }
     return (
         <div className='my-10'>
-            <div className='grid grid-cols-2 mx-20 items-center gap-5'>
+            <div className='lg:grid grid-cols-2 lg:mx-20 items-center gap-5 p-2'>
                 <div>
                     <h1 className='text-center text-6xl font-semibold'>Welcome to my</h1>
                     <h1 className='text-center text-6xl font-semibold text-sky-600'>TextofFood</h1>
@@ -24,7 +25,8 @@ const Home = () => {
                     <img className='rounded-xl' src="/images/img.jpg" alt="" />
                 </div>
             </div>
-            <div  className='grid grid-cols-3 m-20 gap-10 h-full'>
+            <h2 className='text-center text-4xl mt-10 mb-2 font-semibold'>Chef Information</h2> 
+            <div  className='lg:grid grid-cols-3 lg:mx-20 mb-10 gap-10 h-full p-2'>
                 {
                     chefrecipes&&chefrecipes?.map(chefrecipe => <HomeCard
                     key={chefrecipe.id}
@@ -33,7 +35,9 @@ const Home = () => {
                 }
             </div>
             <div>
+                
                 <SectionOne></SectionOne>
+                <SectionTwo></SectionTwo>
             </div>
         </div>
     );
